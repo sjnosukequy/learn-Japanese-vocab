@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="luxury">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/logo.png">
+    <title>Learn Jap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Noto+Sans+JP:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="./style/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navbar bg-base-100 min-h-20">
+        <div class="navbar-start flex-col items-start">
+            <div class="lexend-bold text-xl">JAPANESE LEARNER</div>
+            <div class="noto-sans-jp-regular text-sm">日本語学習者</div>
+        </div>
+        <div class="navbar-end">
+            <div class="dropdown dropdown-hover dropdown-bottom dropdown-end lexend-bold">
+                <div tabindex="0" role="button" class="btn m-1">Theme</div>
+                <ul id="List_Theme" tabindex="0"
+                    class="dropdown-content menu bg-base-300 rounded-box z-[0] w-50 p-2 shadow max-h-64 flex flex-col flex-nowrap overflow-y-scroll">
+                    <!-- <li><a>Item 1</a></li>
+                    <li><a>Item 2</a></li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 min-h-80 content-center justify-items-center mx-auto container">
+        <div class="mt-10">
+            <button id="jap" class="lexend-bold text-center text-9xl mb-5 tooltip block mx-auto" data-tip="hello"></button>
+            <input class="noto-sans-bold outline-none bg-base-300 rounded-full px-5 py-3 shadow-md mb-3 w-full"
+                autocomplete="off" placeholder="Enter " name="input" type="text" id="input" />
+            <p id="score" class="lexend-regular text-center"></p>
+        </div>
+    </div>
+</body>
+<script src="./main.js"> </script>
+
+</html>
