@@ -43,3 +43,8 @@
     font-weight: 700;
     font-style: normal;
 }
+
+.toggle:checked{
+    --tglbg: oklch(var(--a));
+    border: 0;
+}
