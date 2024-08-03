@@ -44,7 +44,36 @@
     font-style: normal;
 }
 
-.toggle:checked{
+.toggle:checked {
     --tglbg: oklch(var(--a));
     border: 0;
+}
+
+
+.font_mobile {
+    font-size: 0.75rem !important;
+}
+
+.table-xs :where(th, td) {
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+@media (max-width: 640px) {
+    .font_mobile {
+        font-size: 0.6rem !important;
+    }
+
+    .table-xs :where(th, td) {
+        padding-left: .3rem;
+        padding-right: .3rem;
+    }
+}
+
+.cell_custom {
+    transition: background-color 0.5s;
+}
+
+.cell_custom:hover{
+    background-color: oklch(var(--b3));
 }

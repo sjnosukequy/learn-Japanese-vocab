@@ -35,16 +35,21 @@
     </div>
     <div class="grid grid-cols-1 min-h-80 content-center justify-items-center mx-auto container">
         <div class="mt-10">
+
             <button id="jap" class="text-primary noto-sans-jp-bold text-center text-9xl mb-7 tooltip block mx-auto"
                 data-tip="hello"></button>
+
             <input class="noto-sans-bold outline-none bg-base-300 rounded-full px-5 py-3 shadow-md mb-3 w-full"
                 autocomplete="off" placeholder="Enter " name="input" type="text" id="input" />
+
             <p id="score" class="lexend-regular text-center mb-3"></p>
-            <div class="flex gap-5">
+
+            <div class="flex gap-5 mb-5">
                 <div class="form-control lexend-regular">
                     <label class="label cursor-pointer gap-2">
                         <span class="label-text">Hiragana</span>
-                        <input id="Hira" type="checkbox" class="hover:bg-secondary toggle toggle-primary" checked="checked" />
+                        <input id="Hira" type="checkbox" class="hover:bg-secondary toggle toggle-primary"
+                            checked="checked" />
                     </label>
                 </div>
                 <div class="form-control lexend-regular">
@@ -54,7 +59,22 @@
                     </label>
                 </div>
             </div>
+
         </div>
+
+        <div class="mb-5">
+            <div class="collapse collapse-arrow bg-base-200">
+                <input type="checkbox" />
+                <div class="collapse-title lexend-bold text-center text-xl text-primary bg-primary-content">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alphabet Table</div>
+                <div class="collapse-content">
+                    <div id="table">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
     </div>
 </body>
 <script src="./main.js"> </script>

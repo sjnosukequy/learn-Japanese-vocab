@@ -66,6 +66,16 @@ async function load_Kata() {
     }
 }
 
+async function load_table() {
+    try {
+        let response = await fetch("./table.html");
+        let data = await response.text();
+        return data;
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
 let hira;
 let kata;
 let hira_keys;
@@ -152,6 +162,8 @@ async function main() {
     kata_keys = Object.keys(kata)
     ans = generate(hira_keys.length)
     let alr = false
+
+    document.querySelector('#table').innerHTML = await load_table()
 
     hira_switch.addEventListener('change', () => {
         if (!switch_lang[0] || switch_lang[1])
