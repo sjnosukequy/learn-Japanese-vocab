@@ -91,7 +91,7 @@ function reset_lang() {
 
 // Load from storage
 let theme = localStorage.getItem('theme')
-if (theme.length == 0 || theme === null || theme === undefined)
+if (theme === null)
     localStorage.setItem("theme", 'light')
 else
     document.getElementsByTagName("html")[0].setAttribute("data-theme", theme)
