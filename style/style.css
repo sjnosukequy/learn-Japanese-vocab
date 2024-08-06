@@ -61,7 +61,7 @@
 
 @media (max-width: 640px) {
     .font_mobile {
-        font-size: 0.6rem !important;
+        font-size: 0.55rem !important;
     }
 
     .table-xs :where(th, td) {
