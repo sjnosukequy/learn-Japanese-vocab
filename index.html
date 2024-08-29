@@ -44,7 +44,7 @@
 
             <p id="score" class="lexend-regular text-center mb-3"></p>
 
-            <div class="flex gap-5 mb-5">
+            <div class="flex gap-5 mb-3">
                 <div class="form-control lexend-regular">
                     <label class="label cursor-pointer gap-2">
                         <span class="label-text">Hiragana</span>
@@ -60,12 +60,25 @@
                 </div>
             </div>
 
+            <div class="flex w-full place-content-center mb-5">
+                <span class="countdown font-mono text-xl lg:text-3xl cursor-pointer hover:bg-base-300 p-3 rounded-lg"
+                    onclick="my_modal.showModal()">
+                    <span class="hr" style="--value:0;"></span>
+                    :
+                    <span class="min" style="--value:0;"></span>
+                    :
+                    <span class="sec" style="--value:0;"></span>
+                </span>
+            </div>
+
+
         </div>
 
         <div class="mb-5">
             <div class="collapse collapse-arrow bg-base-200">
                 <input type="checkbox" />
-                <div class="collapse-title lexend-bold text-center text-xl text-primary-content bg-primary">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alphabet Table</div>
+                <div class="collapse-title lexend-bold text-center text-xl text-primary-content bg-primary">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Alphabet Table</div>
                 <div class="collapse-content">
                     <div id="table">
 
@@ -74,8 +87,82 @@
             </div>
         </div>
 
+        <div id="inform" class="toast opacity-0 transition-opacity w-full md:w-min top-0 pointer-events-none">
+            <div class="alert alert-info">
+                <span class="lexend-bold">Time is up !!.</span>
+            </div>
+        </div>
+
     </div>
+
+    <dialog id="my_modal" class="rounded-lg bg-accent text-accent-content w-full md:w-min">
+        <form method="dialog" class="border-none">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 border-hidden">✕</button>
+        </form>
+
+        <div id="modal_content" class="p-7 flex flex-col gap-3 place-items-center">
+            <h3 class="text-lg lexend-bold place-self-start">Timer</h3>
+            <div id="init_controller" class="block flex flex-col gap-3">
+                <div class="grid auto-cols-max grid-flow-col gap-5 text-center">
+                    <div class="group flex flex-col lexend-regular">
+                        <button id="up_hr"
+                            class="btn-accent shadow-none btn btn-xs bg-transparent border-none invisible group-hover:visible">▲</button>
+                        <span class="countdown font-mono text-5xl">
+                            <span id="set_hr" style="--value:0;"></span>
+                        </span>
+                        hours
+                        <button id="dwn_hr"
+                            class="btn-accent shadow-none btn btn-xs bg-transparent border-none invisible group-hover:visible">▼</button>
+                    </div>
+                    <div class="group flex flex-col lexend-regular">
+                        <button id="up_min"
+                            class="btn-accent shadow-none btn btn-xs bg-transparent border-none invisible group-hover:visible">▲</button>
+                        <span class="countdown font-mono text-5xl">
+                            <span id="set_min" style="--value:0;"></span>
+                        </span>
+                        min
+                        <button id="dwn_min"
+                            class="btn-accent shadow-none btn btn-xs bg-transparent border-none invisible group-hover:visible">▼</button>
+                    </div>
+                    <div class="group flex flex-col lexend-regular">
+                        <button id="up_sec"
+                            class="btn-accent shadow-none btn btn-xs bg-transparent border-none invisible group-hover:visible">▲</button>
+                        <span class="countdown font-mono text-5xl">
+                            <span id="set_sec" style="--value:0;"></span>
+                        </span>
+                        sec
+                        <button id="dwn_sec"
+                            class="btn-accent shadow-none btn btn-xs bg-transparent border-none invisible group-hover:visible">▼</button>
+                    </div>
+                </div>
+                <button id="set_timer" class="btn btn-primary w-full lexend-bold text-primary-content">SET
+                    TIMER</button>
+            </div>
+
+            <div id='post_controller' class="hidden">
+                <span class="countdown font-mono text-xl lg:text-3xl p-3 rounded-lg">
+                    <span class="hr" style="--value:0;"></span>
+                    :
+                    <span class="min" style="--value:0;"></span>
+                    :
+                    <span class="sec" style="--value:0;"></span>
+                </span>
+                <div class="flex gap-3 place-content-center">
+                    <button class="btn btn-primary btn-sm md:btn-md lexend-bold" id="play">❚❚</button>
+                    <button class="btn btn-primary btn-sm md:btn-md lexend-bold" id="reset">
+                        <svg width="0.75rem" height="0.75rem" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M4.281 3h16.437A1.281 1.281 0 0 1 22 4.281v16.437A1.282 1.282 0 0 1 20.718 22H4.282A1.282 1.282 0 0 1 3 20.718V4.281A1.281 1.281 0 0 1 4.281 3z" />
+                            <path fill="currentColor" d="M0 0h24v24H0z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
 </body>
 <script src="./main.js"> </script>
+<script src="./timer.js"> </script>
 
 </html>
